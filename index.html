@@ -49,12 +49,12 @@
                 <div class="logo-container">
                     <img src="/logo.png" alt="The Max Hospital Logo - Care, Innovation, Community" class="logo">
                 </div>
-                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <button class="mobile-menu-toggle **md:hidden**" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-menu">
+                <ul class="nav-menu **hidden md:flex**">
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
@@ -118,7 +118,7 @@
                     <h2 class="section-title">Our Medical Services</h2>
                     <p class="section-subtitle">Comprehensive Healthcare Solutions</p>
                 </div>
-                <div class="services-grid">
+                <div class="services-grid **grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8**">
                     <div class="service-card">
                         <div class="service-icon">🚑</div>
                         <h3 class="service-title">Emergency Care</h3>
@@ -169,7 +169,7 @@
                     <h2 class="section-title">Our Expert Doctors</h2>
                     <p class="section-subtitle">Meet Our Team of Specialists</p>
                 </div>
-                <div class="doctors-grid">
+                <div class="doctors-grid **grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8**">
                     <div class="doctor-card">
                         <div class="doctor-image-placeholder">
                             <img src="https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dr. Rajesh Kumar - Senior Cardiologist with 25 years experience" loading="lazy">
@@ -246,7 +246,7 @@
                     <h2 class="section-title">World-Class Facilities</h2>
                     <p class="section-subtitle">State-of-the-Art Infrastructure</p>
                 </div>
-                <div class="facilities-grid">
+                <div class="facilities-grid **grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8**">
                     <div class="facility-card">
                         <div class="facility-image-placeholder">
                             <img src="https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Modern hospital reception area with welcoming ambiance" loading="lazy">
@@ -299,19 +299,13 @@
                     <h2 class="section-title">Get In Touch</h2>
                     <p class="section-subtitle">We're Here to Help</p>
                 </div>
-                <div class="contact-content">
-                    <div class="contact-info">
+                <div class="contact-content **flex flex-col lg:flex-row lg:space-x-12**">
+                    <div class="contact-info **w-full lg:w-1/2**">
                         <div class="contact-item">
                             <div class="contact-icon">📍</div>
                             <div class="contact-details">
                                 <h3>Address</h3>
-                                <p>
-  <strong>THE MAX HOSPITAL</strong><br />
-  Bargadh Chauraha, Nehru Nagar Crossing<br />
-  Raebareli, Uttar Pradesh – 229001<br /><br />
-
-  📞 9984618992, 6307711564
-</p>
+                                <p>123 Medical Complex, MG Road<br>New Delhi, Delhi 110001<br>India</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -339,7 +333,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form-container">
+                    <div class="contact-form-container **w-full lg:w-1/2 mt-8 lg:mt-0**">
                         <form class="contact-form" id="contactForm">
                             <div class="form-group">
                                 <input type="text" id="name" name="name" placeholder="Your Name" required>
