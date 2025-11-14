@@ -2,50 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* -------------------------- */
-/* MOBILE NAVIGATION FIX      */
-/* -------------------------- */
-@media (max-width: 900px) {
+/* Custom CSS for Mobile Menu Animation (Required for main.js refactoring) */
 
-  /* Hide menu by default */
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    gap: 18px;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: white;
-    padding: 20px;
-    width: 220px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    z-index: 2000;
-  }
-
-  /* Show menu when JS adds .open */
-  .nav-menu.open {
-    display: flex !important;
-  }
-
-  /* Hamburger button styling */
-  .mobile-menu-toggle {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-
-  .mobile-menu-toggle span {
-    width: 28px;
+/* Style for the individual bars */
+.mobile-menu-toggle span {
+    display: block;
+    width: 25px;
     height: 3px;
-    background: #0F6EA3;
-    border-radius: 3px;
-    margin: 4px 0;
-    transition: 0.3s ease;
-  }
+    background-color: #333; /* Default color of the bars */
+    margin: 5px auto;
+    /* Add transition for smooth animation */
+    transition: all 0.3s ease-in-out; 
+}
+
+/* State when the 'open' class is toggled by JavaScript */
+
+/* 1. Top Bar: Rotates and moves down */
+.mobile-menu-toggle.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+/* 2. Middle Bar: Fades out */
+.mobile-menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+/* 3. Bottom Bar: Rotates and moves up */
+.mobile-menu-toggle.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
