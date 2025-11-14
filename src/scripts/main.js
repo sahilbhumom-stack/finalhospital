@@ -10,20 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
         currentYearSpan.textContent = new Date().getFullYear();
     }
 
+    // UPDATED MOBILE MENU TOGGLE LOGIC: 
+    // Now only toggles classes; CSS handles the visual animation.
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('open');
-
-            const spans = this.querySelectorAll('span');
-            if (navMenu.classList.contains('open')) {
-                spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
-            } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
+            navMenu.classList.toggle('active');
+            // Toggling 'open' class on the button itself for CSS animation
+            this.classList.toggle('open'); 
         });
     }
 
@@ -35,12 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 navLinks.forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
 
-                if (navMenu.classList.contains('open')) {
-                    navMenu.classList.remove('open');
-                    const spans = mobileMenuToggle.querySelectorAll('span');
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
+                // UPDATED LOGIC TO CLOSE MENU AFTER CLICK:
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    // Remove 'open' class to reset hamburger icon
+                    mobileMenuToggle.classList.remove('open'); 
                 }
 
                 const targetId = this.getAttribute('href');
