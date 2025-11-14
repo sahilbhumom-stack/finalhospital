@@ -1,12 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* -------------------------- */
 /* MOBILE NAVIGATION FIX      */
 /* -------------------------- */
 @media (max-width: 900px) {
 
-  /* Hide menu normally */
+  /* Hide menu by default */
   .nav-menu {
     display: none;
     flex-direction: column;
@@ -22,7 +23,7 @@
     z-index: 2000;
   }
 
-  /* Show menu when .open is added */
+  /* Show menu when JS adds .open */
   .nav-menu.open {
     display: flex !important;
   }
@@ -30,10 +31,10 @@
   /* Hamburger button styling */
   .mobile-menu-toggle {
     display: flex !important;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -44,7 +45,7 @@
     height: 3px;
     background: #0F6EA3;
     border-radius: 3px;
-    display: block;
     margin: 4px 0;
+    transition: 0.3s ease;
   }
 }
