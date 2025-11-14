@@ -5,33 +5,46 @@
 /* MOBILE NAVIGATION FIX      */
 /* -------------------------- */
 @media (max-width: 900px) {
-  /* Hide menu normally */
-  .site-nav {
-    display: none;
-  }
 
-  /* Show menu when .open is added */
-  .site-nav.open {
-    display: flex !important;
+  /* Hide menu normally */
+  .nav-menu {
+    display: none;
     flex-direction: column;
+    gap: 18px;
     position: absolute;
     top: 70px;
     right: 20px;
     background: white;
+    padding: 20px;
     width: 220px;
-    padding: 18px;
-    gap: 12px;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     z-index: 2000;
   }
 
-  /* Ensure burger always appears on mobile */
-  .burger {
-    display: block;
-    font-size: 26px;
-    background: none;
+  /* Show menu when .open is added */
+  .nav-menu.open {
+    display: flex !important;
+  }
+
+  /* Hamburger button styling */
+  .mobile-menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
     border: none;
-    color: #0F6EA3;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: #0F6EA3;
+    border-radius: 3px;
+    display: block;
+    margin: 4px 0;
   }
 }
