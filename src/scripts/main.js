@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+            navMenu.classList.toggle('open');
 
             const spans = this.querySelectorAll('span');
-            if (navMenu.classList.contains('active')) {
+            if (navMenu.classList.contains('open')) {
                 spans[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
                 spans[1].style.opacity = '0';
                 spans[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 navLinks.forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
 
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
+                if (navMenu.classList.contains('open')) {
+                    navMenu.classList.remove('open');
                     const spans = mobileMenuToggle.querySelectorAll('span');
                     spans[0].style.transform = 'none';
                     spans[1].style.opacity = '1';
